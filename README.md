@@ -1,7 +1,7 @@
 # DevTools
 This library is in alpha and may lack on features.
 
-##Initiating DevTools
+## Initiating DevTools
 
 ```lua
 local Window = DevTools:Init({
@@ -18,13 +18,13 @@ local Window = DevTools:Init({
 })
 ```
 
-##Create a Tab
+## Create a Tab
 
 ```lua
 local Tab = Window:CreateTab({ Name = "Player", Icon = "rbxassetid://6034287594" })
 ```
 
-###Example
+## Example
 
 ```lua
 local Window = DevTools:Init({

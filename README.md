@@ -35,8 +35,8 @@ local Window = DevTools:Init({
 	LoadingBackgroundImage = "rbxassetid://13677037989",
 	
 	Options = {
-		KillYourself = false, -- [Optional] (Unfortunately) Set this to true to reset character on launch
-		FOVAnimations = false, -- [Optional] Set this to true to enable FOV Animations (In Development)
+		KillYourself = false,
+		FOVAnimations = false,
 	}
 })
 

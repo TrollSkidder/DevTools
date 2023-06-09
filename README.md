@@ -1,7 +1,7 @@
 # DevTools
 This library is in alpha and may lack on features.
 
-### Loadstring
+## Loadstring
 
 ```lua
 local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()

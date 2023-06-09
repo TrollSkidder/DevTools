@@ -1,6 +1,12 @@
 # DevTools
 This library is in alpha and may lack on features.
 
+### Loadstring
+
+```lua
+local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()
+```
+
 ## Initiating DevTools
 
 ```lua
@@ -27,6 +33,8 @@ local Tab = Window:CreateTab({ Name = "Player", Icon = "rbxassetid://6034287594"
 ## Example
 
 ```lua
+local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()
+
 local Window = DevTools:Init({
 	Name = "Example",
 	Title = "Example",

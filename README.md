@@ -37,6 +37,11 @@ local Tab = Window:CreateTab({ Name = "Player", Icon = "rbxassetid://6034287594"
 ```lua
 local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()
 
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+
+local Player = Players.LocalPlayer
+
 local Window = DevTools:Init({
 	Name = "Example",
 	Title = "Example",

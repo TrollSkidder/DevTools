@@ -1,5 +1,5 @@
 # DevTools
-This library is in alpha and may lack on features.
+This library is in alpha and may lack on features. If you find any bugs, please join our [Discord server](https://discord.com/invite/RZHFJjXd3m).
 
 ![img](DevTools_Alpha_Banner.png)
 

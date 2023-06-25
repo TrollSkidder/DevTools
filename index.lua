@@ -220,6 +220,8 @@ function DevTools:Init(Settings)
 	Profile.Username.Text = Player.DisplayName
 	Profile.SubscriptionType.Text = "Premium"
 
+	Profile.Username.TextScaled = true
+
 	Topbar.TextLabel.Text = Settings.Name or "SoftSync DevTools"
 	Main.Title.Text = Settings.Title or "DevTools"
 	Main.Team.Text = Settings.Subtitle or "by SoftSync"

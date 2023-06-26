@@ -218,7 +218,7 @@ function DevTools:Init(Settings)
 
 	Profile.Avatar.Image = "rbxthumb://type=AvatarHeadShot&id=" .. Player.UserId .. "&w=48&h=48"
 	Profile.Username.Text = Player.DisplayName
-	Profile.SubscriptionType.Text = "Premium"
+	Profile.SubscriptionType.Text = "@" .. Player.Name
 
 	Profile.Username.TextScaled = true
 
@@ -329,6 +329,10 @@ function DevTools:Init(Settings)
 	-- // Window Options // --
 	local tabs = {}
 	local Selected
+
+	function Window:SetProfileTitle(Title)
+		Profile.SubscriptionType.Text = Title or "User"
+	end
 
 	function Window:CreateTab(TabOptions)
 		local TabWindow = SideWindow.Template.Template:Clone()

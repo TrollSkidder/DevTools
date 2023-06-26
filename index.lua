@@ -225,6 +225,10 @@ function DevTools:Init(Settings)
 	Topbar.TextLabel.Text = Settings.Name or "SoftSync DevTools"
 	Main.Title.Text = Settings.Title or "DevTools"
 	Main.Team.Text = Settings.Subtitle or "by SoftSync"
+
+	function Window:SetProfileTitle(Title)
+		Profile.SubscriptionType.Text = Title or "User"
+	end
 	
 	if Settings.LoadingBackgroundImage then
 		Main.ImageLabel.Image = Settings.LoadingBackgroundImage
@@ -235,6 +239,10 @@ function DevTools:Init(Settings)
 
 	TweenService:Create(Main, TweenInfo.new(1.25, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), { BackgroundTransparency = 0 }):Play()
 	TweenService:Create(Shadow, TweenInfo.new(1.25, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), { ImageTransparency = 0.4 }):Play()
+
+	if Settings._PRE_LAUNCH_TASK then
+		Settings._PRE_LAUNCH_TASK(Window, Interface)
+	end
 
 	task.wait(1)
 
@@ -329,10 +337,6 @@ function DevTools:Init(Settings)
 	-- // Window Options // --
 	local tabs = {}
 	local Selected
-
-	function Window:SetProfileTitle(Title)
-		Profile.SubscriptionType.Text = Title or "User"
-	end
 
 	function Window:CreateTab(TabOptions)
 		local TabWindow = SideWindow.Template.Template:Clone()

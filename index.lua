@@ -426,8 +426,8 @@ function DevTools:Init(Settings)
 				TweenService:Create(Selected.SelectionBox, TweenInfo.new(.4), { Position = UDim2.new(0.5, -12, 0.5, 0) }):Play()
 				TweenService:Create(Selected.SelectionBox, TweenInfo.new(.6), { BackgroundTransparency = 1 }):Play()
 
-				Selection.Title.TextColor3 = Color3.fromRGB(150, 150, 150)
-				Selection.Icon.ImageColor3 = Color3.fromRGB(150, 150, 150)
+				Selected.Title.TextColor3 = Color3.fromRGB(150, 150, 150)
+				Selected.Icon.ImageColor3 = Color3.fromRGB(150, 150, 150)
 			end
 
 			Selected = TabSelection

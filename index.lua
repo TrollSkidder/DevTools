@@ -414,6 +414,8 @@ function DevTools:Init(Settings)
 
 			SideWindow.UIPageLayout:JumpTo(TabWindow)
 
+			TabSelection.Title.TextColor3 = Color3.fromRGB(175, 175, 175)
+			TabSelection.Icon.ImageColor3 = Color3.fromRGB(200, 200, 200)
 			TabSelection.SelectionBox.Position = UDim2.new(0.5, -12, 0.5, 0)
 			TabSelection.SelectionBox.BackgroundTransparency = 1
 
@@ -423,6 +425,9 @@ function DevTools:Init(Settings)
 			if Selected then
 				TweenService:Create(Selected.SelectionBox, TweenInfo.new(.4), { Position = UDim2.new(0.5, -12, 0.5, 0) }):Play()
 				TweenService:Create(Selected.SelectionBox, TweenInfo.new(.6), { BackgroundTransparency = 1 }):Play()
+
+				Selected.Title.TextColor3 = Color3.fromRGB(175, 175, 175)
+				Selected.Icon.ImageColor3 = Color3.fromRGB(200, 200, 200)
 			end
 
 			Selected = TabSelection

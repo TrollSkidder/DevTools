@@ -20,7 +20,7 @@ After loading DevTools, you can initiate it by creating a new window.You have th
 local Window = DevTools:Init({
     Name = "Script Hub", -- Required: Provide a name for the window
     Title = "DevTools", -- Required: Set the title of the loading screen
-    Description = "by SoftSync", -- Required: Add a brief description for the loading screen
+    Subtitle = "by SoftSync", -- Required: Add a brief description for the loading screen
     Icon = "rbxassetid://6031280882", -- Optional: Set an icon for the window
     LoadingBackgroundImage = "rbxassetid://13677037989", -- Optional: Set a background image for the loading screen
     Options = {
@@ -110,7 +110,7 @@ local Player = Players.LocalPlayer
 local Window = DevTools:Init({
 	Name = "Example",
 	Title = "Example",
-	Description = "by TeamName",
+	Subtitle = "by TeamName",
 	Icon = "rbxassetid://6031280882",
 	LoadingBackgroundImage = "rbxassetid://13677037989",
 	

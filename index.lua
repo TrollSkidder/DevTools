@@ -138,7 +138,7 @@ function Minimise(Window)
 	TweenService:Create(Topbar.Divider, TweenInfo.new(.2), { BackgroundTransparency = 1 }):Play()
 	
 	TweenService:Create(Shadow, TweenInfo.new(.2), { ImageTransparency = .9 }):Play()
-	TweenService:Create(Main, TweenInfo.new(.2), { Size = UDim2.new(0, 750, 0, 45), Position = Main.Position - UDim2.new(0, 0, 0, math.ceil(475 / 2) - 22) }):Play()
+	TweenService:Create(Main, TweenInfo.new(.2), { Size = Settings.Size or UDim2.new(0, 750, 0, 475), Position = Main.Position - UDim2.new(0, 0, 0, math.ceil(475 / 2) - 22) }):Play()
 end
 
 function Maximise(Window)
@@ -167,7 +167,7 @@ function Maximise(Window)
 	TweenService:Create(Topbar.Divider, TweenInfo.new(.1), { BackgroundTransparency = 0 }):Play()
 
 	TweenService:Create(Shadow, TweenInfo.new(.1), { ImageTransparency = .4 }):Play()
-	TweenService:Create(Main, TweenInfo.new(.1), { Size = UDim2.new(0, 750, 0, 475), Position = Main.Position + UDim2.new(0, 0, 0, math.ceil(475 / 2) - 22) }):Play()
+	TweenService:Create(Main, TweenInfo.new(.1), { Size = Settings.Size or UDim2.new(0, 750, 0, 475), Position = Main.Position + UDim2.new(0, 0, 0, math.ceil(475 / 2) - 22) }):Play()
 end
 
 function DevTools:Init(Settings)

@@ -1,5 +1,5 @@
 local Release = "v0.0.0"
-local ConfigFolder = "devtools"
+local ConfigFolder = "devtools" -- Mice
 local ConfigExtension = ".ssync"
 
 local DevTools = {

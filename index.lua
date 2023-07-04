@@ -13,7 +13,12 @@ local DevTools = {
 			PrimaryTabTextColor = Color3.new(175, 175, 175),
 			SecondaryTabTextColor = Color3.new(150, 150, 150),
 		}
-	}
+	},
+	Values = {
+      IsMobile = false,
+      DevicePlatfrom = Enum.Platform.None,
+      CanDrag = false
+    }
 }
 
 
@@ -34,7 +39,7 @@ local function AddDraggingFunctionality(DragPoint, MainFrame)
 		local Dragging, DragInput, MousePos, FramePos = false
 
 		DragPoint.InputBegan:Connect(function(Input)
-			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+			if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType.Name == 'Touch' then -- Touch Is A Mobile Connection
 				Dragging = true
 				MousePos = Input.Position
 				FramePos = MainFrame.Position
@@ -48,7 +53,7 @@ local function AddDraggingFunctionality(DragPoint, MainFrame)
 		end)
 
 		DragPoint.InputChanged:Connect(function(Input)
-			if Input.UserInputType == Enum.UserInputType.MouseMovement then
+			if Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType.Name == 'Touch' then
 				DragInput = Input
 			end
 		end)
@@ -61,6 +66,10 @@ local function AddDraggingFunctionality(DragPoint, MainFrame)
 		end)
 	end)
 end
+
+pcall(function() DevTools.Values.DevicePlatform = UserInputService:GetPlatform(); end); -- For safety so the UI library doesn't error.
+DevTools.Values.IsMobile = (DevTools.Values.DevicePlatform == Enum.Platform.Android or DevTools.Values.DevicePlatform == Enum.Platform.IOS);
+
 
 function CreateBlankWindow()
 	local Interface = InterfaceTemplate:Clone()
@@ -273,7 +282,7 @@ function DevTools:Init(Settings)
 
 	task.wait(.4)
 
-	TweenService:Create(Main, TweenInfo.new(1.2, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), { Size = UDim2.new(0, 750, 0, 475) }):Play()
+	TweenService:Create(Main, TweenInfo.new(1.2, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), { Size = Settings.Size or UDim2.new(0, 750, 0, 475) }):Play()
 
 	task.wait(1.3)
 
@@ -332,6 +341,15 @@ function DevTools:Init(Settings)
 	
 	if Settings.Options and Settings.Options.KillYourself and Player.Character then
 		Player.Character:BreakJoints()
+	end
+	
+	if Settings.Size then
+	   Settings.Size = Settings.Size
+	   Main.Size = Settings.Size
+	end
+	
+	if DevTools.Values.IsMobile and not Settings.Size then -- Deinscrease A Window From Mobile
+	   Settings.Size = UDim2.new(0, 550, 0, 200)
 	end
 
 	-- // Window Options // --
